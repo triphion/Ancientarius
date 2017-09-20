@@ -1,0 +1,160 @@
+package com.triphion.ancient.init;
+
+import com.triphion.ancient.AncientMod;
+import com.triphion.ancient.Reference;
+import com.triphion.ancient.blocks.BlockAnemoneOre;
+import com.triphion.ancient.blocks.BlockAradoxiteBlock;
+import com.triphion.ancient.blocks.BlockAradoxiteOre;
+import com.triphion.ancient.blocks.BlockBeeBox;
+import com.triphion.ancient.blocks.BlockBeeHive;
+import com.triphion.ancient.blocks.BlockFlorumCrop;
+import com.triphion.ancient.blocks.BlockFlorumOre;
+import com.triphion.ancient.blocks.BlockGalactiumOreBlue;
+import com.triphion.ancient.blocks.BlockGalactiumOreOrange;
+import com.triphion.ancient.blocks.BlockGalactiumOrePurple;
+import com.triphion.ancient.blocks.BlockIcarusOre;
+import com.triphion.ancient.blocks.BlockLantinumLamp;
+import com.triphion.ancient.blocks.BlockLantinumOre;
+import com.triphion.ancient.blocks.BlockLeadBlock;
+import com.triphion.ancient.blocks.BlockLeadOre;
+import com.triphion.ancient.blocks.BlockLeadStairs;
+import com.triphion.ancient.blocks.BlockLuniteBlock;
+import com.triphion.ancient.blocks.BlockLeadBlock;
+import com.triphion.ancient.blocks.BlockLuniteOre;
+import com.triphion.ancient.blocks.BlockMoltenOre;
+import com.triphion.ancient.blocks.BlockOldRune;
+import com.triphion.ancient.blocks.BlockPurpuriumOre;
+import com.triphion.ancient.blocks.BlockSpectoniumOre;
+import com.triphion.ancient.blocks.BlockStoneStairs;
+import com.triphion.ancient.util.Utils;
+
+import net.minecraft.block.Block;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
+import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.registry.GameRegistry;
+
+public class ModBlocks {
+	
+	public static Block purpuriumore;
+	public static Block luniteore;
+	public static Block leadore;
+	public static Block spectoniumOre;
+	public static Block florumOre;
+	public static Block lantinumOre;
+	public static Block moltenOre;
+	public static Block icarusOre;
+	public static Block anemoneOre;
+	public static Block aradoxiteOre;
+	public static Block galactiumOrepurple;
+	public static Block galactiumOreblue;
+	public static Block galactiumOreorange;
+	
+	public static Block leadblock;
+	public static Block luniteBlock;
+	public static Block lantinumLamp;
+	public static Block FlorumCrop;
+	public static Block aradoxiteBlock;
+	
+	public static BlockLeadStairs leadStairs;
+	public static BlockStoneStairs stoneStairs;
+	
+	public static Block beeBox;
+	public static Block beeHive;
+	public static Block oldRune;
+	
+	public static void init() {
+		FlorumCrop = new BlockFlorumCrop("florumcrop");
+		purpuriumore = new BlockPurpuriumOre("purpuriumore", "purpuriumore");
+		leadore = new BlockLeadOre("leadore", "leadore");
+		luniteore = new BlockLuniteOre("luniteore", "luniteore");
+		moltenOre = new BlockMoltenOre("molten_ore", "molten_ore");
+		lantinumOre = new BlockLantinumOre("lantinum_ore", "lantinum_ore");
+		spectoniumOre = new BlockSpectoniumOre("spectonium_ore", "spectonium_ore");
+		florumOre = new BlockFlorumOre("florum_ore", "florum_ore");
+		icarusOre = new BlockIcarusOre("icarus_ore", "icarus_ore");
+		anemoneOre = new BlockAnemoneOre("anemone_ore", "anemone_ore");
+		aradoxiteOre = new BlockAradoxiteOre("aradoxite_ore", "aradoxite_ore");
+		galactiumOrepurple = new BlockGalactiumOrePurple("galactium_ore_purple", "galactium_ore_purple");
+		galactiumOreblue = new BlockGalactiumOreBlue("galactium_ore_blue", "galactium_ore_blue");
+		galactiumOreorange = new BlockGalactiumOreOrange("galactium_ore_orange", "galactium_ore_orange");
+		
+		leadblock = new BlockLeadBlock("leadblock", "leadblock");
+		stoneStairs = new BlockStoneStairs("stone_stairs", Blocks.STONE.getDefaultState());
+		leadStairs = new BlockLeadStairs("lead_stairs", leadblock.getDefaultState());
+		luniteBlock = new BlockLuniteBlock("lunite_block", "lunite_block");
+		lantinumLamp = new BlockLantinumLamp("lantinum_lamp", "lantinum_lamp");
+		aradoxiteBlock = new BlockAradoxiteBlock("aradoxite_block", "aradoxite_block");
+		
+		beeBox = new BlockBeeBox("bee_box", "bee_box");
+		beeHive = new BlockBeeHive("bee_hive", "bee_hive");
+		oldRune = new BlockOldRune("old_rune", "old_rune");
+	}
+	
+	public static void register() {
+		GameRegistry.register(FlorumCrop);
+		registerBlock(leadore);
+		registerBlock(purpuriumore);
+		registerBlock(luniteore);
+		registerBlock(lantinumOre);
+		registerBlock(spectoniumOre);
+		registerBlock(florumOre);
+		registerBlock(moltenOre);
+		registerBlock(icarusOre);
+		registerBlock(anemoneOre);
+		registerBlock(aradoxiteOre);
+		registerBlock(galactiumOrepurple);
+		registerBlock(galactiumOreblue);
+		registerBlock(galactiumOreorange);
+		registerBlock(leadblock);
+		registerBlock(stoneStairs);
+		registerBlock(leadStairs);
+		registerBlock(luniteBlock);
+		registerBlock(lantinumLamp);
+		registerBlock(aradoxiteBlock);
+		registerBlock(beeBox);
+		registerBlock(beeHive);
+		registerBlock(oldRune);
+	}
+	
+	public static void registerRenders() {
+		registerRender(leadore);
+		registerRender(purpuriumore);
+		registerRender(luniteore);
+		registerRender(moltenOre);
+		registerRender(spectoniumOre);
+		registerRender(florumOre);
+		registerRender(lantinumOre);
+		registerRender(icarusOre);
+		registerRender(anemoneOre);
+		registerRender(aradoxiteOre);
+		registerRender(galactiumOrepurple);
+		registerRender(galactiumOreblue);
+		registerRender(galactiumOreorange);
+		registerRender(leadblock);
+		registerRender(stoneStairs);
+		registerRender(leadStairs);
+		registerRender(luniteBlock);
+		registerRender(lantinumLamp);
+		registerRender(aradoxiteBlock);
+		registerRender(beeBox);
+		registerRender(beeHive);
+		registerRender(oldRune);
+	}
+	
+	public static void registerBlock(Block block) {
+		block.setCreativeTab(AncientMod.blocks);
+		GameRegistry.register(block);
+		GameRegistry.register(new ItemBlock(block).setRegistryName(block.getRegistryName()));
+		Utils.getLogger().info("Registered Block: " + block.getUnlocalizedName().substring(5));
+	}
+	
+	public static void registerRender(Block block) {
+		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0, new ModelResourceLocation(new ResourceLocation(Reference.MODID, block.getUnlocalizedName().substring(5)), "Inventory"));
+		Utils.getLogger().info("Registered render for" + block.getUnlocalizedName().substring(5));
+	}
+
+}
